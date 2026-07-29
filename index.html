@@ -80,6 +80,10 @@
   }
   .date-time{ font-size:15px; letter-spacing:0.1em; color:#8a8378; }
   .date-time strong{ color:var(--charcoal); font-weight:500; }
+  .date-note{
+    margin-top:22px; padding-top:20px; border-top:1px solid var(--line);
+    font-size:12.5px; line-height:1.6; letter-spacing:0.02em; color:#8a8378;
+  }
 
   footer{ text-align:center; padding:0 0 72px; font-size:12px; letter-spacing:0.08em; color:#b3ac9f; }
 
@@ -126,19 +130,15 @@
       <div class="date-label">Le grand jour</div>
       <div class="date-main" id="dateMain"></div>
       <div class="date-time">à <strong id="timeMain"></strong></div>
+      <div class="date-note">L'entrée est fixée à 3 pièces de bronze, entièrement reversés pour la location de la salle des fêtes.</div>
     </section>
 
-    <footer>Avec tout notre amour — Aurore &amp; Thomas</footer>
+    <footer>By tranchent_</footer>
 
   </div>
 
 <script>
-  /* =========================================================
-     👉 POUR CHANGER LA DATE ET L'HEURE DU MARIAGE :
-     Modifiez uniquement la ligne ci-dessous.
-     Format : 'AAAA-MM-JJTHH:MM:00'
-     ========================================================= */
-  const dateMariage = new Date('2026-07-30T20:10:00');
+  const dateMariage = new Date('2026-07-30T20:00:00');
 
   const jours = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
   const mois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
