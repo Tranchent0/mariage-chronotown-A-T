@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurore & Thomas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#ffffff;
+    --ivory:#fbf9f6;
+    --charcoal:#2e2a25;
+    --gold:#b89b5e;
+    --sage:#7c8b6f;
+    --line:#e8e3da;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--white);
+    color:var(--charcoal);
+    font-family:'Jost', sans-serif;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{ max-width:640px; margin:0 auto; padding:0 24px; }
+
+  .hero{ padding:96px 0 64px; text-align:center; position:relative; }
+  .eyebrow{
+    font-size:11px; letter-spacing:0.35em; text-transform:uppercase;
+    color:var(--sage); margin-bottom:28px; opacity:0; animation:fadeUp .8s ease forwards;
+  }
+  .names{
+    font-family:'Cormorant Garamond', serif; font-weight:500;
+    font-size:clamp(42px, 9vw, 76px); line-height:1.05; letter-spacing:0.01em;
+    opacity:0; animation:fadeUp .9s ease .15s forwards;
+  }
+  .amp{ display:block; font-style:italic; font-size:0.42em; color:var(--gold); margin:10px 0; }
+  .hero-sub{
+    margin-top:26px; font-size:14px; letter-spacing:0.08em; color:#8a8378;
+    opacity:0; animation:fadeUp .9s ease .3s forwards;
+  }
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+
+  .portraits-row{ display:flex; justify-content:center; gap:56px; flex-wrap:wrap; padding:8px 0 72px; }
+  .portrait-pair{ display:flex; flex-direction:column; align-items:center; }
+  .portrait{ position:relative; width:150px; height:150px; flex:0 0 auto; }
+  .frame{ position:absolute; inset:0; pointer-events:none; }
+  .frame span{ position:absolute; width:16px; height:16px; border:1.5px solid var(--gold); }
+  .frame .tl{top:-6px; left:-6px; border-right:none; border-bottom:none;}
+  .frame .tr{top:-6px; right:-6px; border-left:none; border-bottom:none;}
+  .frame .bl{bottom:-6px; left:-6px; border-right:none; border-top:none;}
+  .frame .br{bottom:-6px; right:-6px; border-left:none; border-top:none;}
+  .portrait img{
+    width:100%; height:100%; object-fit:cover;
+    background:var(--ivory); border:1px solid var(--line);
+    image-rendering:pixelated;
+  }
+  .initial-fallback{
+    width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+    background:var(--ivory); border:1px solid var(--line);
+    font-family:'Cormorant Garamond', serif; font-size:44px; color:var(--gold);
+  }
+  .portrait-label{
+    text-align:center; font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
+    color:#a39c8f; margin-top:14px;
+  }
+
+  .divider{ display:flex; align-items:center; justify-content:center; gap:14px; color:var(--gold); padding:0 0 64px; }
+  .divider .l, .divider .r{ height:1px; width:64px; background:var(--line); }
+  .divider .dot{ width:5px; height:5px; background:var(--gold); transform:rotate(45deg); }
+
+  .datecard{ text-align:center; padding:56px 32px; border:1px solid var(--line); position:relative; margin-bottom:80px; }
+  .datecard .frame span{ border-color:var(--gold); }
+  .date-label{ font-size:11px; letter-spacing:0.35em; text-transform:uppercase; color:var(--sage); margin-bottom:18px; }
+  .date-main{
+    font-family:'Cormorant Garamond', serif; font-weight:500;
+    font-size:clamp(26px, 5vw, 34px); text-transform:capitalize; margin-bottom:8px;
+  }
+  .date-time{ font-size:15px; letter-spacing:0.1em; color:#8a8378; }
+  .date-time strong{ color:var(--charcoal); font-weight:500; }
+
+  footer{ text-align:center; padding:0 0 72px; font-size:12px; letter-spacing:0.08em; color:#b3ac9f; }
+
+  @media (max-width:480px){
+    .hero{padding:64px 0 40px;}
+    .portraits-row{gap:28px;}
+    .datecard{padding:44px 20px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <section class="hero">
+      <div class="eyebrow">Vous êtes cordialement invités</div>
+      <h1 class="names">Aurore<span class="amp">&amp;</span>Thomas</h1>
+      <p class="hero-sub">SE MARIENT</p>
+    </section>
+
+    <section class="portraits-row">
+      <div class="portrait-pair">
+        <div class="portrait">
+          <div class="frame"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+          <img src="head-aurore.png" alt="Aurore Teneris"
+               onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'initial-fallback',textContent:'A'}))">
+        </div>
+        <div class="portrait-label">Aurore Teneris</div>
+      </div>
+      <div class="portrait-pair">
+        <div class="portrait">
+          <div class="frame"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+          <img src="head-thomas.png" alt="Thomas Bill"
+               onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'initial-fallback',textContent:'T'}))">
+        </div>
+        <div class="portrait-label">Thomas Bill</div>
+      </div>
+    </section>
+
+    <div class="divider"><span class="l"></span><span class="dot"></span><span class="r"></span></div>
+
+    <section class="datecard">
+      <div class="frame"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+      <div class="date-label">Le grand jour</div>
+      <div class="date-main" id="dateMain"></div>
+      <div class="date-time">à <strong id="timeMain"></strong></div>
+    </section>
+
+    <footer>Avec tout notre amour — Aurore &amp; Thomas</footer>
+
+  </div>
+
+<script>
+  /* =========================================================
+     👉 POUR CHANGER LA DATE ET L'HEURE DU MARIAGE :
+     Modifiez uniquement la ligne ci-dessous.
+     Format : 'AAAA-MM-JJTHH:MM:00'
+     ========================================================= */
+  const dateMariage = new Date('2026-09-12T15:00:00');
+
+  const jours = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  const mois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+
+  const jourTxt = jours[dateMariage.getDay()];
+  const dateTxt = `${jourTxt} ${dateMariage.getDate()} ${mois[dateMariage.getMonth()]} ${dateMariage.getFullYear()}`;
+  const heures = String(dateMariage.getHours()).padStart(2,'0');
+  const minutes = String(dateMariage.getMinutes()).padStart(2,'0');
+  const heureTxt = `${heures}h${minutes}`;
+
+  document.getElementById('dateMain').textContent = dateTxt;
+  document.getElementById('timeMain').textContent = heureTxt;
+</script>
+
+</body>
+</html>
